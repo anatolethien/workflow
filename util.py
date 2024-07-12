@@ -18,3 +18,25 @@ def save(
         if_exists="replace",
     )
     conn.close()
+
+
+def remove_outliers(
+    ser: pd.Series,
+    z: float = 1.5,
+) -> pd.Series:
+    mask = np.abs((ser - np.mean(ser)) / np.std(ser)) < z
+    return ser[mask]
+
+
+def fill_outliers(
+    ser: pd.Series,
+    z: float = 1.5,
+    method: str = "mean",
+) -> pd.Series:
+    mask = np.abs((ser - np.mean(ser)) / np.std(ser)) < z
+    match method:
+        case "mean" | "avg":
+            ser[~mask] = np.mean(ser[mask])
+        case "median":
+            ser[~mask] = np.median(ser[mask])
+    return ser
