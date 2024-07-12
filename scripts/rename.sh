@@ -7,6 +7,6 @@ fi
 
 title="$1"
 
-sed -i '' "s/industrial/$title/g" README.md
-sed -i '' "s/industrial/$title/g" docs/presenation.md
-sed -i '' "s/industrial/$title/g" docs/report.md
+sed -i "s/industrial/$title/g" README.md
+sed -i "s/industrial/$title/g" docs/presentation.md
+sed -i "s/industrial/$title/g" docs/report.md
