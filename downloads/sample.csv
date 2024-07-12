@@ -1,0 +1,11 @@
+id,name,height,width,length,material,price
+1,Desk,720,1200,600,Wood,250.00
+2,Chair,850,450,450,Plastic,50.00
+3,Sofa,800,2000,800,Leather,800.00
+4,Table,750,1000,1000,Glass,300.00
+5,Bookcase,1800,800,300,Wood,150.00
+6,Cabinet,900,1200,600,Metal,400.00
+7,Armchair,750,800,800,Leather,600.00
+8,Stool,450,300,300,Wood,75.00
+9,Bed,900,2000,1600,Wood,1000.00
+10,Dresser,900,1200,600,Wood,600.00
