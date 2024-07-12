@@ -7,7 +7,7 @@ from util import *
 
 
 df = pd.read_csv(
-    filepath_or_buffer="data/data.csv",
+    filepath_or_buffer="data/sample.csv",
     sep=",",
     decimal=".",
     encoding="utf-8",

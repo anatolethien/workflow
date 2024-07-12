@@ -2,7 +2,7 @@
 
 ## Install
 
-Destroy the current git repository.
+Destroy the current git repository and the sample data.
 
 ```
 rm -rf .git/
