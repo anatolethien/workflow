@@ -6,6 +6,7 @@ Destroy the current git repository.
 
 ```
 rm -rf .git/
+rm -rf data/* downloads/*
 ```
 
 Initiate a Python virtual environment and install dependencies.
