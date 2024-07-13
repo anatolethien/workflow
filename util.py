@@ -6,7 +6,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def save(
+def select_table(
+    table_name: str,
+) -> pd.DataFrame:
+    conn = sqlite3.connect("data/db.sqlite3")
+    query = f"SELECT * FROM {table_name}"
+    df = pd.read_sql(
+        sql=query,
+        con=conn,
+    )
+    conn.close()
+    return df
+
+
+def insert_table(
     df: pd.DataFrame,
     table_name: str,
 ):
@@ -14,7 +27,7 @@ def save(
     df.to_sql(
         name=table_name,
         con=conn,
-        index=False,
+        index=True,
         if_exists="replace",
     )
     conn.close()
