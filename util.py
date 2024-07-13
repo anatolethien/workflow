@@ -4,6 +4,7 @@ import sqlite3
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 def select_table(
@@ -129,3 +130,36 @@ def fill_outliers(
         case "median":
             ser[~mask] = np.median(ser[mask])
     return ser
+
+
+def correlation_matrix(
+    df: pd.DataFrame,
+    abs: bool = True,
+):
+    """Plot the correlation matrix for all numerical columns in the DataFrame.
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        The DataFrame containing the data for which to compute the correlation
+        matrix.
+    abs : bool, optional
+        The correlation values will be displayed as absolute values if True.
+
+    Returns
+    -------
+    None
+        This function does not return a value.
+    """
+    m = df.select_dtypes(include=np.number).corr()
+    plt.figure(figsize=(10, 8))
+    plt.title("Correlation Matrix", fontfamily="monospace", fontsize=16)
+    sns.heatmap(
+        data=m.abs() if abs else m,
+        annot=True,
+        annot_kws={"fontfamily": "monospace", "fontsize": 8},
+        vmax=1.0,
+        vmin=0.0 if abs else -1.0,
+        linewidths=0.5
+    )
+    plt.show()
