@@ -1,6 +1,12 @@
-# industrial
+# workflow
 
 ## Install
+
+Clone the repository.
+
+```
+git clone git@github.com:anatolethien/workflow.git project
+```
 
 Destroy the current git repository and the sample data.
 
